@@ -124,6 +124,9 @@ if [ "${PIPESTATUS[*]}" != "0 0" ]; then
   exit 1
 fi
 
+# remove ivy cache
+rm -rf $SBT_USER_HOME/.ivy2
+
 # repack cache
 mkdir -p $CACHE_DIR
 for DIR in $CACHED_DIRS ; do
