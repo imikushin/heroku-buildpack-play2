@@ -16,8 +16,8 @@ cd $BUILD_DIR
 mkdir tmp
 cd tmp
 
-curl --silent --max-time 40 http://dl.dropbox.com/u/24364253/play-2.0-RC1-SNAPSHOT.zip > play-2.0-RC1-SNAPSHOT.zip
-jar -xf play-2.0-RC1-SNAPSHOT.zip
+curl --silent --max-time 40 http://dl.dropbox.com/u/24364253/play-2.0-RC1-SNAPSHOT.tgz > play-2.0-RC1-SNAPSHOT.tgz
+tar -xzf play-2.0-RC1-SNAPSHOT.tgz
 cd ..
 
 # build app
