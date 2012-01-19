@@ -126,6 +126,7 @@ fi
 
 # remove ivy cache
 rm -rf $SBT_USER_HOME/.ivy2
+mkdir -p $SBT_USER_HOME/.ivy2
 
 # repack cache
 mkdir -p $CACHE_DIR
