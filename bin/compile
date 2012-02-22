@@ -16,18 +16,20 @@ cd $BUILD_DIR
 mkdir .tmp
 cd .tmp
 
-echo "-----> Fetching play-2.0-RC1-SNAPSHOT.tgz"
-curl --max-time 40 http://dl.dropbox.com/u/24364253/play-2.0-RC1-SNAPSHOT.tgz > play-2.0-RC1-SNAPSHOT.tgz
-echo "-----> Extracting play-2.0-RC1-SNAPSHOT"
-tar -xzf play-2.0-RC1-SNAPSHOT.tgz
+PLAY_PACKAGE='play-2.0-RC2'
+
+echo "-----> Fetching ${PLAY_PACKAGE}.tgz"
+curl --max-time 40 http://dl.dropbox.com/u/24364253/${PLAY_PACKAGE}.tgz > ${PLAY_PACKAGE}.tgz
+echo "-----> Extracting ${PLAY_PACKAGE}"
+tar -xzf ${PLAY_PACKAGE}.tgz
 cd ..
 
 # build app
 echo "-----> Running: play clean compile stage"
 
-$BUILD_DIR/.tmp/play-2.0-RC1-SNAPSHOT/play clean compile stage 2>&1 | sed -u 's/^/       /'
+$BUILD_DIR/.tmp/${PLAY_PACKAGE}/play clean compile stage 2>&1 | sed -u 's/^/       /'
 if [ "${PIPESTATUS[*]}" != "0 0" ]; then
-  echo " !     Failed to build app with play-2.0-RC1-SNAPSHOT"
+  echo " !     Failed to build app with ${PLAY_PACKAGE}"
   exit 1
 fi
 
