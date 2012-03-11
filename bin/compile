@@ -19,7 +19,7 @@ cd .tmp
 PLAY_PACKAGE='play-2.0-RC5'
 
 echo "-----> Fetching ${PLAY_PACKAGE}.tgz"
-curl --max-time 40 http://dl.dropbox.com/u/24364253/${PLAY_PACKAGE}.tgz > ${PLAY_PACKAGE}.tgz
+curl --max-time 60 http://dl.dropbox.com/u/24364253/${PLAY_PACKAGE}.tgz > ${PLAY_PACKAGE}.tgz
 echo "-----> Extracting ${PLAY_PACKAGE}"
 tar -xzf ${PLAY_PACKAGE}.tgz
 cd ..
